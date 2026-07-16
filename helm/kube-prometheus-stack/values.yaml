@@ -1,0 +1,18 @@
+# Values for the kube-prometheus-stack Helm chart.
+# This file will be expanded when observability is added.
+
+grafana:
+  enabled: true
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    hosts:
+      - grafana.home.lab
+    tls:
+      - secretName: grafana-tls
+        hosts:
+          - grafana.home.lab
+
+prometheus:
+  prometheusSpec:
+    retention: 7d
